@@ -1,0 +1,23 @@
+{
+  "name": "kiel-camp",
+  "version": "1.0.0",
+  "description": "This is an app for campers to view and rate campgrounds everywhere.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karimsawaneh/kiel-camp.git"
+  },
+  "author": "Karim Sawaneh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/karimsawaneh/kiel-camp/issues"
+  },
+  "homepage": "https://github.com/karimsawaneh/kiel-camp#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.15.4"
+  }
+}
