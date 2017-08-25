@@ -1,8 +1,13 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var Campground = require('./models/campground');
+var seedDB = require('./seeds');
 
 var app = express();
+
+// using seedDB
+seedDB();
 
 // connect mongoose
 mongoose.connect('mongodb://localhost/kiel_camp', ({
@@ -12,14 +17,6 @@ mongoose.connect('mongodb://localhost/kiel_camp', ({
 app.use(bodyParser.urlencoded({extended: true}));
 // setup view engine
 app.set('view engine', 'ejs');
-
-// Schema setup
-var campgroundSchema = new mongoose.Schema({
-    name: String,
-    image: String,
-    description: String
-});
-var Campground = mongoose.model('Campground', campgroundSchema);
 
 // Campground.create(
 //     { 
