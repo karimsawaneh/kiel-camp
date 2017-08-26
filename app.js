@@ -7,9 +7,6 @@ var seedDB = require('./seeds');
 
 var app = express();
 
-// using seedDB
-seedDB();
-
 // connect mongoose
 mongoose.connect('mongodb://localhost/kiel_camp', ({
     useMongoClient: true
@@ -19,6 +16,9 @@ mongoose.Promise = global.Promise;
 app.use(bodyParser.urlencoded({extended: true}));
 // setup view engine
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
+// using seedDB
+seedDB();
 
 // Landing page
 app.get('/', function(req, res){
